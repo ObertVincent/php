@@ -1,7 +1,7 @@
 # Pizza Store PDO SQL
 
  - Récupérer un backup de la BDD pizzastore
-L'intérêt est de pouvoir recréer la structure de la base à tout moment.
+ - L'intérêt est de pouvoir recréer la structure de la base à tout moment.
 
 Au niveau du PHP, on va créer quelques fichiers / dossier :
 
@@ -16,3 +16,6 @@ Au niveau du PHP, on va créer quelques fichiers / dossier :
 Au niveau du front.
 
 - assets/ -> contiendra le css, le js, les images
+- assets/css/style.css
+- assets/js/script.js
+- assets/img/
