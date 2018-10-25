@@ -1,0 +1,32 @@
+.page-title {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e8e8e8;
+}
+.col-md-3 {
+    margin: 10px;
+}
+.card-img-top {
+    position: relative;
+}
+.price {height:30px;
+    width: 60px;
+    position: absolute;
+    bottom: 32%; 
+    right: 5%;
+    font-style: italic;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 8px;
+    text-align: center;
+    color: antiquewhite;
+}
+.card-img-top-container {overflow: hidden;}
+.card-img-top-zoomeffect {
+    transition: 0.5s;
+}
+.card-img-top-zoomeffect:hover {
+    cursor: pointer; 
+    transform: scale(1.2);
+}
