@@ -1,3 +1,6 @@
+body {background-image: url("../img/fond.jpg");
+    background-size: cover;}
+
 .page-title {
     margin-top: 30px;
     margin-bottom: 40px;
@@ -10,7 +13,8 @@
 .card-img-top {
     position: relative;
 }
-.price {height:30px;
+
+.card-price {height:30px;
     width: 60px;
     position: absolute;
     bottom: 32%; 
@@ -29,4 +33,41 @@
 .card-img-top-zoomeffect:hover {
     cursor: pointer; 
     transform: scale(1.2);
+}
+.card-price-cents { 
+    font-size: 10px;
+}
+.page-title {
+    color:antiquewhite;
+    text-align: center;
+}
+/* CSS for Single pizza pages */
+
+.titleofpizza {
+    text-align: center;
+    color: red;
+}
+.nameofpizza {
+    color:red;
+    font-size: 60px;
+    
+}
+.priceofpizza {
+    height:30px;
+    width: 80px;
+    font-style: italic;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 8px;
+    text-align: center;
+    color: antiquewhite;
+    margin-bottom: 30px;
+}
+.descriptif {
+    color: antiquewhite;
+    margin-bottom: 30px;
+}
+.imgofpizza {
+    height: 500px;
+    width: 500px;
 }

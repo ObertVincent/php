@@ -11,6 +11,7 @@ require_once(__dir__.'/partials/header.php');
 ?>
 
 <main class="container">
+    <div class="fond">
     <h1 class="page-title">Liste des pizzas</h1>
 
     <div class="row">
@@ -20,18 +21,17 @@ require_once(__dir__.'/partials/header.php');
         <div class="card">
             <div class="card-img-top-container">
             <img class="card-img-top card-img-top-zoomeffect" src="<?php echo $pizza['image']; ?>" alt="<?php echo $pizza['name']; ?>">
-            <div class="price"><?php echo $pizza['price'].'€'; ?></div>
+            <div class="card-price"><?php echo formatPrice($pizza['price'].'€'); ?></div>
             </div>
             <div class="card-body">
                 <h5 class="card-title"><?php echo $pizza['name']; ?></h5>
-                <a href="#" class="btn btn-danger">Commandez</a>
+                <a href="pizza_single.php?id=<?php echo $pizza['id'];?>" class="btn btn-danger">Commandez</a>
             </div>
         </div>
     </div>
     <?php } ?>
     </div>
-   
-
+    </div>
 </main>
 
 <?php 

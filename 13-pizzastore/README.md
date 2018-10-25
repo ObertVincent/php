@@ -20,3 +20,21 @@ Au niveau du front.
 - assets/css/style.css
 - assets/js/script.js
 - assets/img/
+
+Fonctionnalité supplémentaire
+- Formulaire d'ajout d'une pizza
+- Créer la page pizza_add.php (Permettra d'ajouter une pizza côté administrateur)
+- Ne pas oublier header et le footer
+- Ajouter un titre "Ajouter une pizza"
+- Ajouter un formulaie avec les champs suivants:
+- Nom: saisie libre
+- Prix: entre 5 et 19.99
+- Image: Saisie libre 
+- Description: Saisie libre
+- Catégories: Select
+- Bouton
+- Traitement du formulaire (vérifier les données)
+- Ajouter la pizza dans la base avec une requête quand on clique sur le bouton 
+- Modifier le champ description (text) et catégorie (varchar ou enum) dans la table pizza.
+
+
