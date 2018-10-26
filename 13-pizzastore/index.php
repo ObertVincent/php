@@ -3,7 +3,9 @@
 require_once(__dir__.'/partials/header.php');?>
 
 <main class="container">
-    <h1>Mon site Pizza Store</h1>
+    <h1>           Pizza Galactique        </h1>
+    <h2>Venez déguster des pizzas venues d'une galaxie lointaine, très lointaine !</h2>
+    <img class="resto img-fluid" src="assets/img/restaurant.jpg" alt="logo">
 </main>
 
 

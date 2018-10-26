@@ -1,5 +1,7 @@
-body {background-image: url("../img/fond.jpg");
-    background-size: cover;}
+body {
+    background-image: url("../img/fond.jpg");
+    background-size: cover;
+}
 
 .page-title {
     margin-top: 30px;
@@ -7,17 +9,50 @@ body {background-image: url("../img/fond.jpg");
     padding-bottom: 15px;
     border-bottom: 2px solid #e8e8e8;
 }
+
 .col-md-3 {
     margin: 10px;
 }
-.card-img-top {
-    position: relative;
+
+h1 {
+    color: antiquewhite;
+    text-align: center;
 }
 
-.card-price {height:30px;
+h2 {
+    color: antiquewhite;
+    text-align: center;
+}
+
+.imgadd {
+    position: relative;
+    margin-right: 30px;
+    color: antiquewhite;
+    text-align: center;
+}
+
+.resto {
+    position: relative;
+    margin-left: 68px;
+}
+
+.logo {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.card-img-top {
+    position: relative;
+    height: 250px;
+    width: 300px;
+}
+
+.card-price {
+    height: 30px;
     width: 60px;
     position: absolute;
-    bottom: 32%; 
+    bottom: 32%;
     right: 5%;
     font-style: italic;
     font-weight: bold;
@@ -26,34 +61,76 @@ body {background-image: url("../img/fond.jpg");
     text-align: center;
     color: antiquewhite;
 }
-.card-img-top-container {overflow: hidden;}
+
+.card-img-top-container {
+    overflow: hidden;
+}
+
 .card-img-top-zoomeffect {
     transition: 0.5s;
 }
+
 .card-img-top-zoomeffect:hover {
-    cursor: pointer; 
+    cursor: pointer;
     transform: scale(1.2);
 }
-.card-price-cents { 
+
+.card-price-cents {
     font-size: 10px;
 }
+
 .page-title {
-    color:antiquewhite;
+    color: antiquewhite;
     text-align: center;
 }
+
+.descript {
+    position: relative;
+    margin-right: 40px;
+    color: antiquewhite;
+    text-align: center;
+
+}
+
+/*CSS du formulaire*/
+input[type=range].custom-slider {
+    -webkit-appearance: none;
+    /*nécessaire pour Chrome */
+    padding: 0;
+    /* nécessaire pour IE */
+    font: inherit;
+    /* même rendu suivant font document */
+    outline: none;
+    color: #069;
+    /* sert pour couleur de référence, via currentColor, pour le curseur */
+    opacity: .8;
+    background: #CCC;
+    /* sert pour couleur de fond de la zone de déplacement */
+    box-sizing: border-box;
+    /* même modèle de boîte pour tous */
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.form-group {
+    color: antiquewhite;
+}
+
 /* CSS for Single pizza pages */
 
 .titleofpizza {
     text-align: center;
     color: red;
 }
+
 .nameofpizza {
-    color:red;
+    color: red;
     font-size: 60px;
-    
+
 }
+
 .priceofpizza {
-    height:30px;
+    height: 30px;
     width: 80px;
     font-style: italic;
     font-weight: bold;
@@ -63,11 +140,16 @@ body {background-image: url("../img/fond.jpg");
     color: antiquewhite;
     margin-bottom: 30px;
 }
+
 .descriptif {
     color: antiquewhite;
     margin-bottom: 30px;
 }
+
 .imgofpizza {
     height: 500px;
     width: 500px;
+}
+.verif {
+    color: red;
 }

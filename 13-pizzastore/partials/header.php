@@ -40,7 +40,9 @@ require_once(__DIR__.'/../config/database.php');
 
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
-        <a class="navbar-brand" href="#">Pizza Store</a>
+        <img class="logo" src="assets/img/logo.png" alt="logo">
+        <a class="navbar-brand" href="#">Pizza Galactique</a>
+    
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,7 +55,11 @@ require_once(__DIR__.'/../config/database.php');
                 <li class="nav-item <?= ($currentPageUrl === 'pizza_list') ? 'active' : ''; ?>">
                     <a class="nav-link" href="pizza_list.php">Liste des pizzas</a>
                 </li>
+                <li class="nav-item <?= ($currentPageUrl === 'pizza_add') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="pizza_add.php">Ajouter une pizza</a>
+                </li>
             </ul>
         </div>
+        <img class="logo" src="assets/img/logo.png" alt="logo">
     </nav>
     

@@ -36,7 +36,7 @@ require_once(__dir__.'/partials/header.php');?>
             <h4 class="descriptif">Descriptif de la pizza</h4>
             <div class="descriptif">
             <?php echo $pizza['Description']; ?>
-            <?php echo $pizza['size']; ?>
+            
             </div>
             <div class="priceofpizza">
                 <?php echo formatPrice($pizza['price'].'€'); ?>
