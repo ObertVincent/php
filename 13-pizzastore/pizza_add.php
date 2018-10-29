@@ -4,11 +4,12 @@ $currentPageTitle = 'Ajouter une pizza';
 require_once(__DIR__.'/partials/header.php');
 // Traitement du formulaire
 $name = $price = $image = $category = $description = null;
+
 // le formulaire est soumis
 if (!empty($_POST)) {
     $name = $_POST['name'];
     $price = str_replace(',', '.', $_POST['price']); // on remplace la , par un . pour le prix
-    $image = $_POST['image'];
+    $image = $_FILES['image'];
     $category = $_POST['category'];
     $description = $_POST['description'];
     // Raccourci avec l'interpolation de variables
@@ -29,7 +30,7 @@ if (!empty($_POST)) {
         $errors['price'] = 'Le prix n\'est pas valide';
     }
     // Vérifier l'image
-    if (empty($image)) {
+    if ($image['error'] === 4) {
         $errors['image'] = 'L\'image n\'est pas valide';
     }
     // Vérifier la catégorie
@@ -40,14 +41,41 @@ if (!empty($_POST)) {
     if (empty($description)) {
         $errors['description'] = 'La description n\'est pas valide';
     }
+
+    // upload de l'image
+    //if(empty($error)){
+        var_dump($image);
+        $file = $image['tmp_name']; // Emplacement du fichier temporaire
+        $fileName = 'assets/img/'.$image['name'];
+
+        $finfo = finfo_open(FILEINFO_MIME_TYPE); // Permet d'ouvrir un fichier
+        $mimeType = finfo_file($finfo, $file); // Ouvre le fichier et renvoie image/jpg
+        $allowedExtensions = ['image/jpg','image/jpeg','image/gif','image/png'];
+        //Si l'extentsion n'est pas autorisée, il y a une erreur
+        if (!in_array($mimeType, $allowedExtensions)) {
+            $errors['image'] = 'Ce type de fichier n\'est pas autorisé';
+        }
+        // Vérifier la taille du fichier
+        // Le 30 est défini en ko
+        if $image['size'] /1024 >30 {
+            $errors['image'] = 'L\'image est trop Lourde';
+        }
+
+        if (!isset($errors['image'])){
+        move_uploaded_file($file,__DIR__.'/'.$fileName); // On déplace le fichier uploadé où on le souhaite
+        }
+    //}
     // S'il n'y a pas d'erreurs dans le formulaire
     if (empty($errors)) {
         $query = $db->prepare('
-            INSERT INTO pizza (`name`, `price`, `image`) VALUES (:name, :price, :image)
+            INSERT INTO pizza (`name`, `price`, `image`,`category`,`description`) 
+            VALUES (:name, :price, :image, :category, :description)
         ');
         $query->bindValue(':name', $name, PDO::PARAM_STR);
         $query->bindValue(':price', $price, PDO::PARAM_STR);
-        $query->bindValue(':image', $image, PDO::PARAM_STR);
+        $query->bindValue(':image', $fileName, PDO::PARAM_STR);
+        $query->bindValue(':category', $category, PDO::PARAM_STR);
+        $query->bindValue(':description', $description, PDO::PARAM_STR);
         if ($query->execute()) { // On insère la pizza dans la BDD
             $success = true;
             // Envoyer un mail ?
@@ -69,7 +97,7 @@ if (!empty($_POST)) {
         </div>
     <?php } ?>
     
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -92,7 +120,7 @@ if (!empty($_POST)) {
                 </div>
                 <div class="form-group">
                     <label for="image">Image :</label>
-                    <input type="text" name="image" id="image" class="form-control <?php echo isset($errors['image']) ? 'is-invalid' : null; ?>" value="<?php echo $image; ?>">
+                    <input type="file" name="image" id="image" class="form-control <?php echo isset($errors['image']) ? 'is-invalid' : null; ?>">
                     <?php if (isset($errors['image'])) {
                         echo '<div class="invalid-feedback">';
                             echo $errors['image'];
